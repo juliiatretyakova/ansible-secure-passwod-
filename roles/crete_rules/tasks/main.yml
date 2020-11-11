@@ -1,0 +1,19 @@
+---
+# tasks file for roles/crete_rules
+
+- name: tasks file for roles/crete_rules                                                                                                  
+  pamd:
+    # /etc/pam.d/common-password
+    #Check whether the name of the user in straight or reversed form is    contained in the new password. If it is found the new password is    rejected
+    #control : The control of the PAM rule being modified
+    #new_control :The control to assign to the new rule.
+    # new_module_path : The control to assign to the new rule.
+    #state : With 'before', the new rule will be inserted before a rule matching type, control and module_path
+    name: common-password
+    type: password
+    control: required
+    module_path: pam_faillock.so
+    new_type: auth
+    new_control: sufficient
+    new_module_path: pam_faillock.so
+    state: before

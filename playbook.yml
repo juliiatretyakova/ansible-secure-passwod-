@@ -1,0 +1,14 @@
+---
+    # Ansible task secure pasword
+    - name: Ansible
+      become: yes
+      hosts: all  
+      tasks:
+        - name: tasks file for roles/secure-password 
+          include_role:
+            name: secure-password
+ 
+        - name: tasks file for roles/crete_rules 
+          include_role:
+              name: crete_rules
+          

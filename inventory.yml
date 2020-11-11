@@ -1,0 +1,11 @@
+---
+   
+first:
+        hosts:
+          first_1:
+            ansible_host: 35.201.221.85
+all:
+    vars:
+           ansible_user: julia
+
+           
