@@ -3,4 +3,4 @@
 - name: tasks file for roles/secure-password                                                                                                  
   apt:                                                                                                                     
    name: libpam-pwquality                                                                                                   
-   state: latest 
+   state: present
