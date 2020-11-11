@@ -2,5 +2,5 @@
 # tasks file for roles/secure-password
 - name: tasks file for roles/secure-password                                                                                                  
   apt:                                                                                                                     
-   name: libpam-cracklib                                                                                                   
-   state: present 
+   name: libpam-pwquality                                                                                                   
+   state: latest 

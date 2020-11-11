@@ -9,12 +9,14 @@
     #new_control :The control to assign to the new rule.
     # new_module_path : The control to assign to the new rule.
     #state : With 'before', the new rule will be inserted before a rule matching type, control and module_path
+    #reject_username : Check whether the name of the user in straight or reversed form is contained in the new password. If it is found the new password is rejected
+    # enforce_for_root: Ensures that even if it is the root user that is setting the password, the complexity policies should be enforced.
     name: common-password                                                                                                   
     type: password                                                                                                          
-    control: required                                                                                                       
-    module_path: pam_permit.so                                                                                              
-    module_arguments: 'reject_username enforce_for'                                                                         
-    new_control: required                      
+    control: requisite                                                                                                       
+    module_path: pam_pwquality.so                                                                                              
+    module_arguments: 'retry=2 reject_username enforce_for_root'                                                                         
+    new_control: requisite                      
     new_type: password                                                                                                      
-    new_module_path: pam_cracklib.so                                                                                        
+    new_module_path: pam_pwquality.so                                                                                        
     state: updated  
