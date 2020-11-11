@@ -3,7 +3,7 @@
 first:
         hosts:
           first_1:
-            ansible_host: 35.201.221.85
+            ansible_host: 35.194.188.72
 all:
     vars:
            ansible_user: julia

@@ -9,11 +9,12 @@
     #new_control :The control to assign to the new rule.
     # new_module_path : The control to assign to the new rule.
     #state : With 'before', the new rule will be inserted before a rule matching type, control and module_path
-    name: common-password
-    type: password
-    control: required
-    module_path: pam_faillock.so
-    new_type: auth
-    new_control: sufficient
-    new_module_path: pam_faillock.so
-    state: before
+    name: common-password                                                                                                   
+    type: password                                                                                                          
+    control: required                                                                                                       
+    module_path: pam_permit.so                                                                                              
+    module_arguments: 'reject_username enforce_for'                                                                         
+    new_control: required                      
+    new_type: password                                                                                                      
+    new_module_path: pam_cracklib.so                                                                                        
+    state: updated  
